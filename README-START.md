@@ -69,8 +69,10 @@ empathy-workspace/
 ├── .claude/
 │   ├── settings.json          ← permissions
 │   └── skills/
-│       └── empathy-onboarding/ ← скилл уже здесь, ничего ставить не нужно
-└── notes/                     ← сюда пишут /daily-log и другие скиллы по мере роадмапа
+│       ├── empathy-onboarding/ ← скилл уже здесь, ничего ставить не нужно
+│       ├── daily-log/          ← M1 (недели 3-5) — ежедневный чек-ин, баллы в AI Champion
+│       └── reflect/            ← M1 (недели 3-5) — еженедельное ретро, черновик Mini-Demo
+└── notes/                     ← сюда пишут /daily-log и /reflect по дням/неделям
 ```
 
 ---
