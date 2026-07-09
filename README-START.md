@@ -10,6 +10,7 @@
 
 - Windows или macOS
 - Терминал
+- Git — скачай с [git-scm.com](https://git-scm.com/downloads) и поставь с настройками по умолчанию. Нужен дважды: чтобы скачать эту папку и для работы Claude Code на Windows
 - Личная подписка **Claude Pro или Claude Max** (не общий API-ключ компании — тарификация должна быть прозрачно твоя)
 
 ---
@@ -39,14 +40,17 @@ claude
 ```
 При первом запуске Claude Code попросит авторизоваться в браузере — войди под своим аккаунтом Claude Pro/Max (не под чужим и не через общий API-ключ).
 
-## Шаг 4. Открыть эту папку
+## Шаг 4. Скачать рабочую папку и открыть её
 
-Скачай/склонируй этот репозиторий, затем в терминале:
+В терминале:
 ```
-cd путь/до/этой/папки
+git clone https://github.com/sergevalovoi/empathy-workspace.git
+cd empathy-workspace
 claude
 ```
 Claude прочитает `CLAUDE.md` и увидит, что онбординг ещё не пройден.
+
+(Если git clone не сработал — запасной путь: открой https://github.com/sergevalovoi/empathy-workspace → зелёная кнопка Code → Download ZIP → распакуй, зайди в папку через `cd`, запусти `claude`.)
 
 ## Шаг 5. Пройти онбординг
 
@@ -64,8 +68,8 @@ Claude прочитает `CLAUDE.md` и увидит, что онбординг
 empathy-workspace/
 ├── README-START.md          ← ты здесь
 ├── CLAUDE.md                 ← инструкция для Claude, что читать при старте
-├── COMPANY.md                 ← заполнится на онбординге
-├── AGENT-PERSONALITY.md      ← заполнится на онбординге
+├── COMPANY.md                 ← создаст онбординг
+├── AGENT-PERSONALITY.md      ← создаст онбординг
 ├── .claude/
 │   ├── settings.json          ← permissions
 │   └── skills/
@@ -86,7 +90,8 @@ empathy-workspace/
 ## Если что-то не так
 
 - `claude` не найден → `npm install -g @anthropic-ai/claude-code` заново
-- Просит войти заново → `claude login`
+- Просит войти заново → запусти `claude`, внутри набери `/login`
+- Claude пишет про лимит использования (usage limit) → это не поломка. У подписки Pro лимит на 5-часовое окно, он восстановится сам. Дождись времени, указанного в сообщении, и продолжи с того же места — контекст не потеряется.
 - Вопросы — пиши Кристине или Сержу
 
 ---
