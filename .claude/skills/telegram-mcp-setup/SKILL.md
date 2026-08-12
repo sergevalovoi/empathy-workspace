@@ -10,7 +10,7 @@ description: |
 license: MIT
 compatibility: |
   Windows 11 + Docker Desktop — единственный путь, описанный здесь (вся команда на Windows).
-  Тот же образ и тот же паттерн уже работает у Сержа лично — если Docker Desktop запущен,
+  Тот же образ и тот же паттерн уже проверен на реальных установках — если Docker Desktop запущен,
   подключение стабильно.
 metadata:
   version: "1.0.0"
@@ -61,9 +61,10 @@ Write-Host "Claude CLI: $(try { claude --version } catch { 'NOT FOUND' })"
 2. Ввести номер телефона (+7... для России), код подтверждения из Telegram
 3. Нажать **"API development tools"**
 4. Если приложения ещё нет — создать:
-   - App title: `Claude Code Integration`
-   - Short name: уникальное, только буквы, 5-32 символа (например `имя_claude`) — если занято, добавить цифры
+   - App title: латиницей, без пробелов, например `ClaudeCodeIntegration`
+   - Short name: строго alphanumeric (только латинские буквы и цифры, БЕЗ подчёркиваний и дефисов), 5-32 символа, например `claudecode2026` — если занято, добавить цифры
    - Platform: Desktop
+   - Если форма выдаёт «ERROR» при сохранении — см. `references/troubleshooting.md`, раздел «ERROR при создании приложения»
 5. Записать **api_id** (число) и **api_hash** (32-символьная строка)
 
 ## Шаг 2 — Session string (~3-5 мин)
